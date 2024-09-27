@@ -1,6 +1,6 @@
 {
   "name": "@seobryn/local-flags",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "description": "Client feature flags management",
   "main": "index.mjs",
@@ -14,7 +14,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky"
   },
-  "keywords": [],
+  "keywords": [
+    "feature flags",
+    "flags",
+    "local flags",
+    "local",
+    "flags",
+    "feature",
+    "flag",
+    "feature-flags",
+    "feature-management",
+    "toggle",
+    "A/B-testing"
+  ],
   "author": {
     "name": "Jose Joya",
     "url": "https://github.com/seobryn",
