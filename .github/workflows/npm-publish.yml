@@ -13,11 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 10.2.3
+          run_install: false
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 18.19.0
+          cache: pnpm
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm publish --access public
+      - run: pnpm i --frozen-lockfile
+      - run: pnpm publish --access public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
