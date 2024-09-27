@@ -1,0 +1,27 @@
+{
+  "name": "local-flags",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Client feature flags management",
+  "main": "index.mjs",
+  "files": [
+    "index.mjs",
+    "LICENSE",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "AGPL-3.0-only",
+  "devDependencies": {
+    "standard": "^17.1.2"
+  },
+  "eslintConfig": {
+    "extends": [
+      "standard"
+    ]
+  }
+}

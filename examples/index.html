@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Flags</title>
+    <script type="module">
+      import { setupLocalFlags } from "../index.mjs";
+      setupLocalFlags({ hiddenContent: false });
+    </script>
+    <style>
+      .hidden-content {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Local Flags</h1>
+
+    <p>Open the web console and play with the featues</p>
+
+    <h2>Feature List:</h2>
+    <ol>
+      <li>hiddenContent: use this flag to test the feature flags.</li>
+    </ol>
+    <button id="btn-check">Reload Content</button>
+
+    <div class="hidden-content" id="dynamic-content">
+      <h2>Hidden Content</h2>
+      <p>
+        This is a hidden content that only works with the feature flag enabled
+      </p>
+    </div>
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        const $ = (selector) => document.querySelector(selector);
+
+        const $dynamicContent = $("#dynamic-content");
+        const $btnCheck = $("#btn-check");
+
+        function checkFlag() {
+          if (isFeatureEnabled("hiddenContent")) {
+            $dynamicContent.classList.remove("hidden-content");
+          }
+        }
+
+        $btnCheck.addEventListener("click", () => checkFlag());
+
+        if (isFeatureEnabled("hiddenContent")) {
+          $dynamicContent.classList.remove("hidden-content");
+        }
+      });
+    </script>
+  </body>
+</html>
