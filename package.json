@@ -14,7 +14,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Jose Joya",
+    "url": "https://github.com/seobryn",
+    "email": "ing.jose.joya@gmail.com"
+  },
   "license": "AGPL-3.0-only",
   "devDependencies": {
     "standard": "^17.1.2"
