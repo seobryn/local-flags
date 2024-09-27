@@ -1,6 +1,6 @@
 {
   "name": "@seobryn/local-flags",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "description": "Client feature flags management",
   "main": "index.mjs",
@@ -23,5 +23,13 @@
     "extends": [
       "standard"
     ]
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seobryn/local-flags.git"
+  },
+  "bugs": {
+    "url": "https://github.com/seobryn/local-flags/issues"
+  },
+  "homepage": "https://github.com/seobryn/local-flags#readme"
 }
