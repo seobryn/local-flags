@@ -1,5 +1,5 @@
 {
-  "name": "local-flags",
+  "name": "@seobryn/local-flags",
   "version": "1.0.0",
   "type": "module",
   "description": "Client feature flags management",
