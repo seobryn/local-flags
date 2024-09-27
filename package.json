@@ -1,6 +1,6 @@
 {
   "name": "@seobryn/local-flags",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "type": "module",
   "description": "Client feature flags management",
   "main": "index.mjs",
