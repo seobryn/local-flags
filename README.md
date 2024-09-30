@@ -12,6 +12,11 @@ npm install @seobryn/local-flags
 pnpm i @seobryn/local-flags
 ```
 
+or if you want to add it through the CDN:
+```js
+import { setupLocalFlags } from "https://cdn.jsdelivr.net/npm/@seobryn/local-flags@1.0.8/index.mjs"
+```
+
 ## Usage
 
 ```js
