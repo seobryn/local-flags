@@ -32,8 +32,8 @@ setupLocalFlags({
 
 ```js
 // in your application or in the browser console
-enableFeature('calendarView'); // use this to enable a feature.
-disableFeature('calendarView'); // use this to disable a feature.
-featureList(); // use this to list all features.
-isFeatureEnabled('calendarView'); // use this to check if a feature is enabled.
+localFlags.enableFeature('calendarView'); // use this to enable a feature.
+localFlags.disableFeature('calendarView'); // use this to disable a feature.
+localFlags.featureList(); // use this to list all features.
+localFlags.isFeatureEnabled('calendarView'); // use this to check if a feature is enabled.
 ```

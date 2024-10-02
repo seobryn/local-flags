@@ -19,23 +19,13 @@ export function setupLocalFlags (params) {
     return
   }
 
-  Object.defineProperty(window, 'enableFeature', {
-    value: enableFeature,
-    writable: false
-  })
-
-  Object.defineProperty(window, 'disableFeature', {
-    value: disableFeature,
-    writable: false
-  })
-
-  Object.defineProperty(window, 'featureList', {
-    value: featureList,
-    writable: false
-  })
-
-  Object.defineProperty(window, 'isFeatureEnabled', {
-    value: isFeatureEnabled,
+  Object.defineProperty(window, 'localFlags', {
+    value: {
+      enableFeature,
+      disableFeature,
+      isFeatureEnabled,
+      featureList
+    },
     writable: false
   })
 
