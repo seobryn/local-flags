@@ -39,7 +39,8 @@ const localFlags = setupLocalFlags({
 // in your application or in the browser console
 localFlags.enableFeature('calendarView'); // use this to enable a feature.
 localFlags.disableFeature('calendarView'); // use this to disable a feature.
-localFlags.featureList(); // use this to list all features.
+console.log(localFlags.featureList.toString()); // use this to get a list of all features in String format.
+console.log(localFlags.featureList.toJSON()); // use this to get a list of all features in JSON format.
 localFlags.isFeatureEnabled('calendarView'); // use this to check if a feature is enabled.
 ```
 
