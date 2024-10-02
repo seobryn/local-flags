@@ -21,7 +21,7 @@ let major = Number(version[0])
 if (commitMessage.startsWith('feat')) {
   minor += 1
   patch = 0
-} else if (commitMessage.startsWith('fix')) {
+} else if (commitMessage.startsWith('fix') || commitMessage.startsWith('chore')) {
   patch += 1
 } else if (commitMessage.startsWith('release')) {
   major += 1

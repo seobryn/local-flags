@@ -37,3 +37,7 @@ localFlags.disableFeature('calendarView'); // use this to disable a feature.
 localFlags.featureList(); // use this to list all features.
 localFlags.isFeatureEnabled('calendarView'); // use this to check if a feature is enabled.
 ```
+
+## Live example
+
+Try out the live example [here](https://stackblitz.com/edit/local-flags-example)
