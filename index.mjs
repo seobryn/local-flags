@@ -32,7 +32,10 @@ export function setupLocalFlags (params, options = { useGlobal: true }) {
     enableFeature,
     disableFeature,
     isFeatureEnabled,
-    featureList
+    featureList: {
+      toString: featureListString,
+      toJSON: featureListJSON
+    }
   }
 
   Object.defineProperty(window, 'localFlags', {
@@ -84,8 +87,9 @@ function isFeatureEnabled (feature) {
 
 /**
  * This method prints a list of features
+ * @returns {string}
  */
-function featureList () {
+function featureListString () {
   const keys = Object.keys(localStorage)
 
   if (keys.length === 0) {
@@ -99,5 +103,28 @@ function featureList () {
       return key.replace('feature.', '\t- ') + ': ' + (value ? 'ON' : 'OFF')
     })
     .join('\n')
-  console.log(`Feature List:\n${list}`)
+  return list
+}
+
+/**
+ * Returns an Array of all features and their status
+ * @return {{ name: string, value: boolean }[]} Array of features
+ */
+function featureListJSON () {
+  const keys = Object.keys(localStorage)
+
+  if (keys.length === 0) {
+    console.log('No features found')
+    return []
+  }
+  const list = keys
+    .filter(key => key.startsWith('feature.'))
+    .map(key => {
+      const value = localStorage.getItem(key) === 'true'
+      return {
+        name: key.replace('feature.', ''),
+        value
+      }
+    })
+  return list
 }

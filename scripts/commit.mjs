@@ -1,5 +1,6 @@
 import fs from 'fs'
 import { execSync } from 'child_process'
+import { exit } from 'process'
 
 const __dirname = new URL('.', import.meta.url).pathname
 
