@@ -39,14 +39,14 @@
         const $btnCheck = $("#btn-check");
 
         function checkFlag() {
-          if (isFeatureEnabled("hiddenContent")) {
+          if (localFlags.isFeatureEnabled("hiddenContent")) {
             $dynamicContent.classList.remove("hidden-content");
           }
         }
 
         $btnCheck.addEventListener("click", () => checkFlag());
 
-        if (isFeatureEnabled("hiddenContent")) {
+        if (localFlags.isFeatureEnabled("hiddenContent")) {
           $dynamicContent.classList.remove("hidden-content");
         }
       });
