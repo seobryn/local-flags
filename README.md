@@ -25,9 +25,14 @@ import { setupLocalFlags } from "https://unpkg.com/@seobryn/local-flags@1.0.9/in
 import { setupLocalFlags } from '@seobryn/local-flags';
 
 setupLocalFlags(); // use this to setup local flags.
+
 setupLocalFlags({
     calendarView: false
 }); // use this to setup local flags with default values.
+
+const localFlags = setupLocalFlags({
+    calendarView: false
+}, { useGloblal:false }) // use this setup if you want to expose localFlags Object in your JS code without using the global variable.
 ```
 
 ```js

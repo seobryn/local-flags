@@ -10,7 +10,16 @@
 
 const { localStorage } = window
 
-export function setupLocalFlags (params) {
+/**
+ *
+ * @param {object} params - Feature name and default value
+ *   example:  `setupLocalFlags({awesomeFeature: false})`
+ * @param {object} options - Feature name and default value
+ * @param {boolean} options.useGlobal - Enable / Disable locaFlags globally (Default: true)
+ *
+ * @return {object | void} returns `localFlags` Object if useGlobal option is false
+ */
+export function setupLocalFlags (params, options = { useGlobal: true }) {
   if (typeof window === 'undefined') {
     throw new Error('Local flags can only be used in the browser')
   }
@@ -19,13 +28,15 @@ export function setupLocalFlags (params) {
     return
   }
 
+  const localFlags = {
+    enableFeature,
+    disableFeature,
+    isFeatureEnabled,
+    featureList
+  }
+
   Object.defineProperty(window, 'localFlags', {
-    value: {
-      enableFeature,
-      disableFeature,
-      isFeatureEnabled,
-      featureList
-    },
+    value: localFlags,
     writable: false
   })
 
@@ -36,6 +47,10 @@ export function setupLocalFlags (params) {
     } else {
       console.log(`Feature [${key}] has been set to [${value === 'true' ? 'ON' : 'OFF'}]`)
     }
+  }
+
+  if (!options.useGlobal) {
+    return localFlags
   }
 }
 
